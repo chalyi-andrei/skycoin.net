@@ -98,20 +98,45 @@ function getRssPath(locale) {
 
 class News extends PureComponent {
   constructor(props) {
-    super(props);
-    const rss = getRssPath(this.props.locale);
+    super();
 
     this.state = {
-      rss,
+      posts: [],
+      loaded: false,
     };
+    // this.rss = 'blog.xml';
+    this.rss = props.locale !== DEFAULT_LOCALE ? `https://www.skycoin.net/blog/${props.locale}/index.xml` : 'https://www.skycoin.net/blog/index.xml';
   }
 
-  componentWillReceiveProps({ locale }) {
-    if (locale !== this.props.locale) {
-      const rss = getRssPath(locale);
+  componentDidMount() {
+    axios.get(this.rss)
+      .then((response) => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(response.data, 'text/xml');
+        const items = xml.getElementsByTagName('item');
 
-      this.setState({ rss });
-    }
+        return Array.prototype.slice.call(items, 0, 3);
+      })
+      .then((items) => {
+        const posts = [];
+        items.forEach((item) => {
+          const dt = new Date(item.getElementsByTagName('pubDate')[0].textContent);
+          const date = moment(dt).locale('en');
+          const enclosure = item.getElementsByTagName('enclosure');
+          const image = enclosure.length ? enclosure[0].getAttribute('url') : '';
+          posts.push({
+            title: item.getElementsByTagName('title')[0].textContent,
+            href: item.getElementsByTagName('link')[0].textContent,
+            image,
+            date,
+          });
+        });
+
+        this.setState({
+          posts,
+          loaded: true,
+        });
+      });
   }
 
   render() {
