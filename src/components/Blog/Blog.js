@@ -179,4 +179,8 @@ News.propTypes = {
   rss: PropTypes.string.isRequired,
 };
 
+News.defaultProps = {
+  rss: 'https://www.skycoin.net/blog/index.xml',
+};
+
 export default News;
