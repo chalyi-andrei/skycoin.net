@@ -7,9 +7,8 @@ import Header from 'components/Header';
 import Heading from 'components/Heading';
 import Button from 'components/Button';
 import media from 'utils/media';
+import { COLOR } from 'config';
 import Animation from './components/Animation';
-
-import bg from './bg.png';
 
 const Wrapper = styled(Flex)`
   position: relative;
@@ -28,9 +27,7 @@ const Intro = styled(Flex)`
   position: relative;
   flex-grow: 1;
   z-index: 1;
-`;
-
-const IntroContent = styled.div`
+  
   ${media.sm.css`
     max-width: 25rem;
   `}
@@ -43,10 +40,9 @@ const MinerHero = () => (
     <Intro align="center">
       <Animation />
       <Container>
-        <IntroContent>
-          <Heading heavy as="h1" fontSize={[7, 9]} color="white">
-            <FormattedMessage id="skyminer.hero.heading" />
-          </Heading>
+        <Heading heavy as="h1" fontSize={[7, 9]} color="white">
+          <FormattedMessage id="skyminer.hero.heading" />
+        </Heading>
 
           <Button to="downloads" color="white" bg="base" xxl width={['100%', '260px']} pill mt={5} >
             <FormattedMessage id="skyminer.hero.button" />
