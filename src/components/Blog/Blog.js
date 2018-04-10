@@ -133,10 +133,8 @@ class News extends PureComponent {
     };
   }
 
-  async componentDidMount() {
-    const isLocal = window.location.hostname === 'localhost';
-    const rss = isLocal ? 'blog.xml' : this.props.rss;
-    const posts = await getXml(rss);
+  componentDidMount() {
+    const rss = this.props.rss || 'https://www.skycoin.net/blog/index.xml';
 
     if (!isEqual(this.state.posts, posts)) {
       // eslint-disable-next-line react/no-did-mount-set-state
@@ -179,10 +177,6 @@ class News extends PureComponent {
 
 News.propTypes = {
   rss: PropTypes.string.isRequired,
-};
-
-News.defaultProps = {
-  rss: 'https://www.skycoin.net/blog/index.xml',
 };
 
 export default News;

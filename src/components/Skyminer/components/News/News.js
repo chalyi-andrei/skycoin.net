@@ -16,28 +16,15 @@ const Wrapper = styled(Box)`
   overflow: hidden;
 `;
 
-const DEFAULT_LOCALE = 'en';
-
-const SkyminerNews = ({ locale }) => {
-  const rss = locale !== DEFAULT_LOCALE
-    ? `https://www.skycoin.net/blog/${locale}/categories/skyminer/index.xml`
-    : 'https://www.skycoin.net/blog/categories/skyminer/index.xml';
-
-  return (
-    <Wrapper pt={[10, 13]} pb={[7, 8]}>
-      <Container>
-        <Heading heavy as="h2" my={[4, 6]} fontSize={[5, 6, 7]} width={[1, 2 / 3]}>
-          <FormattedMessage id="home.news.heading" />
-        </Heading>
-        <Blog rss={rss} />
-      </Container>
-    </Wrapper>
-  );
-};
-
-SkyminerNews.propTypes = {
-  locale: PropTypes.string.isRequired,
-};
-
+const SkyminerNews = () => (
+  <Wrapper pt={[10, 13]} pb={[7, 8]}>
+    <Container>
+      <Heading heavy as="h2" my={[4, 6]} fontSize={[5, 6, 7]} width={[1, 2 / 3]}>
+        <FormattedMessage id="home.news.heading" />
+      </Heading>
+      <Blog rss="/categories/skyminer/index.xml" />
+    </Container>
+  </Wrapper>
+);
 
 export default SkyminerNews;
