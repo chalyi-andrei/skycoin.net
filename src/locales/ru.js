@@ -445,8 +445,13 @@ export default {
       heading: 'Gallery',
     },
     signup: {
+<<<<<<< HEAD
       heading: 'Join The Skyminer Waitlist',
       body: 'Reserve your spot in the internet of tomorrow, today!',
+=======
+      heading: 'Join the Waitlist to be Able to Buy a Skyminer',
+      body: 'Receive updates about the Skyminer and get notified as soon as Skyminers are available for purchase.',
+>>>>>>> skyminer > add link to page, update form
     },
   },
   roadmap: {

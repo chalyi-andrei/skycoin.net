@@ -34,10 +34,6 @@ export default {
     input: '输入你的邮件',
     skyminerOption: 'I\'m Interested in a Skywire Miner',
   },
-  newsletter: {
-    heading: 'Sign up to receive updates',
-    button: 'Sign up',
-  },
   markets: {
     title: 'Buy Skycoin',
     loading: 'Loading, please wait...',

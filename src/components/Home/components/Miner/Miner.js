@@ -32,6 +32,12 @@ const Miner = () => (
         <FormattedMessage id="home.miner.subheading" />
       </Text>
 
+      <Flex align="flex-end" column wrap mt={[7, 8, 10]}>
+        <Button to="skyminer" color="base" pill outlined>
+          <FormattedMessage id="home.miner.more" />
+        </Button>
+      </Flex>
+
       <Box my={[7, 8, 10]}>
         <Gallery imgMain={miner1} imgList={miners} />
       </Box>

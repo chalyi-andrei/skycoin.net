@@ -80,6 +80,7 @@ export default {
   newsletter: {
     heading: 'Sign up to receive updates',
     button: 'Sign up',
+    skyminerOption: 'I\'m Interested in a Skywire Miner',
   },
   markets: {
     title: 'Buy Skycoin',
@@ -421,7 +422,7 @@ export default {
     title: 'Explore Skyminer',
     description: 'Skywire Miner: hardware for the new internet',
     hero: {
-      heading: 'Skyminer: <br/>Hardware for the new internet.',
+      heading: 'Skywire Miner: hardware for the new internet',
       button: 'JOIN THE WAIT LIST',
     },
     about: {
@@ -449,8 +450,8 @@ export default {
       heading: 'Gallery',
     },
     signup: {
-      heading: 'Join The Skyminer Waitlist',
-      body: 'Reserve your spot in the internet of tomorrow, today!',
+      heading: 'Join the Waitlist to be Able to Buy a Skyminer',
+      body: 'Receive updates about the Skyminer and get notified as soon as Skyminers are available for purchase.',
     },
   },
   roadmap: {
