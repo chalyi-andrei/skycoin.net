@@ -3,13 +3,11 @@ import styled from 'styled-components';
 import { rgba } from 'polished';
 import { COLOR } from 'config';
 import media from 'utils/media';
-import * as createjs from 'createjs-module';
 
-import { lib } from './skyminer_animation';
+import { lib } from './skyminer_anim';
 
 const Wrapper = styled.div`
   position: absolute;
-  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   max-height: 100%;

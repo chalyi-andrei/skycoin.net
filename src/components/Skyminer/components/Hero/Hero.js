@@ -8,8 +8,9 @@ import Header from 'components/Header';
 import Heading from 'components/Heading';
 import Button from 'components/Button';
 import media from 'utils/media';
-import { COLOR } from 'config';
 import Animation from './components/Animation';
+
+import bg from './bg.png';
 
 const Wrapper = styled(Flex)`
   position: relative;
@@ -39,8 +40,9 @@ const IntroContent = styled(Box)`
   `}
 `;
 
-const MinerHero = ({ onClick }) => (
-  <Wrapper column>
+const MinerHero = () => (
+  <Wrapper pb={[8, 12]} column>
+    <Animation />
     <Header white social showBuy={false} />
     <Intro align="center">
       <Animation />
