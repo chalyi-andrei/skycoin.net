@@ -8,7 +8,10 @@ import Heading from 'components/Heading';
 import Button from 'components/Button';
 import media from 'utils/media';
 import { COLOR } from 'config';
+import PropTypes from 'prop-types';
+
 import Animation from './components/Animation';
+
 
 const Wrapper = styled(Flex)`
   position: relative;
